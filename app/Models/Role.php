@@ -23,5 +23,10 @@ class Role extends Model
     // protected $casts = [
     //     'permissions' => 'array', // Convert JSON permissions to an array
     // ];
+
+    // public function permissions()
+    // {
+    //     return $this->belongsToMany(Permission::class);
+    // }
 }
 

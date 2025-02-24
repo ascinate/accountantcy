@@ -26,48 +26,28 @@
             <label for="dashboard">Dashboard</label>
         </div>
         <div>
-            <input type="checkbox" id="users" name="permissions[]" value="Users">
-            <label for="users">Users</label>
-        </div>
-        <div>
-            <input type="checkbox" id="roles" name="permissions[]" value="Roles">
-            <label for="roles">Roles</label>
+            <input type="checkbox" id="people" name="permissions[]" value="People">
+            <label for="people">People</label>
         </div>
         <div>
             <input type="checkbox" id="products" name="permissions[]" value="Products">
             <label for="products">Products</label>
         </div>
         <div>
-            <input type="checkbox" id="category" name="permissions[]" value="Category">
-            <label for="category">Category</label>
-        </div>
-        <div>
-            <input type="checkbox" id="brand" name="permissions[]" value="Brand">
-            <label for="brand">Brand</label>
-        </div>
-        <div>
-            <input type="checkbox" id="unit" name="permissions[]" value="Unit">
-            <label for="unit">Unit</label>
-        </div>
-        <div>
-            <input type="checkbox" id="warehouse" name="permissions[]" value="Warehouse">
-            <label for="warehouse">Warehouse</label>
-        </div>
-        <div>
-            <input type="checkbox" id="adjustments" name="permissions[]" value="Adjustments">
+            <input type="checkbox" id="adjustments" name="permissions[]" value="Adjustment">
             <label for="adjustments">Adjustments</label>
-        </div>
-        <div>
-            <input type="checkbox" id="transfers" name="permissions[]" value="Transfers">
-            <label for="transfers">Transfers</label>
         </div>
         <div>
             <input type="checkbox" id="sales" name="permissions[]" value="Sales">
             <label for="sales">Sales</label>
         </div>
         <div>
-            <input type="checkbox" id="purchases" name="permissions[]" value="Purchases">
-            <label for="purchases">Purchases</label>
+            <input type="checkbox" id="accounting" name="permissions[]" value="Accounting">
+            <label for="accounting">Accounting</label>
+        </div>
+        <div>
+            <input type="checkbox" id="transfer" name="permissions[]" value="Transfer">
+            <label for="transfer">Transfer</label>
         </div>
         <div>
             <input type="checkbox" id="quotations" name="permissions[]" value="Quotations">

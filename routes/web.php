@@ -39,7 +39,7 @@ Route::get('/', function () {
     return view('admin_login');
 });
 
-Route::post('/admin/dashboard', [UserController::class, 'login']);
+Route::any('/admin/dashboard', [UserController::class, 'login']);
 Route::get('admin/logout', [UserController::class, 'logout']);
 Route::post('roles', [RoleController::class, 'store']);
 

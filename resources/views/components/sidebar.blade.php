@@ -28,7 +28,7 @@ $permission = json_decode($role_permission, true) ?? [];
         @if(in_array('Dashboard', $permission))
           <li class="nav-item nav-item-has-children">
             <a
-              href="#0"
+              href="{{ URL::to('/user') }}"
               data-bs-toggle="collapse"
               data-bs-target="#ddmenu_1"
               aria-controls="ddmenu_1"
@@ -50,22 +50,18 @@ $permission = json_decode($role_permission, true) ?? [];
 
            
             <ul id="ddmenu_1" class="collapse show dropdown-nav">
-            @isset($permission)
-            @if(in_array('Users', $permission))
+        
               <li>
                 <a href="{{ URL::to('/user') }}" class="active"> Users </a>
               </li>
-              @endif
-              @endisset
+            
 
-              @isset($permission)
-              @if(in_array('Roles', $permission))
+            
               <li>
               
                 <a href="{{ URL::to('/role') }}" class="active"> Role </a>
               </li>
-              @endif
-              @endisset
+             
             </ul>
           </li>
          
@@ -250,8 +246,12 @@ $permission = json_decode($role_permission, true) ?? [];
           </li>
           @endif
           @endisset
-  
-          <li class="nav-item nav-item-has-children">
+
+
+
+          @isset($permission)
+          @if(in_array('Accounting', $permission))
+        <li class="nav-item nav-item-has-children">
             <a
               href="#0"
               class="collapsed"
@@ -284,6 +284,12 @@ $permission = json_decode($role_permission, true) ?? [];
               </li>
             </ul>
           </li>
+          @endif
+          @endisset
+
+
+          @isset($permission)
+          @if(in_array('Transfer', $permission))
           <li class="nav-item">
             <a href="{{ URL::to('/transfer') }}">
               <span class="icon">
@@ -299,6 +305,11 @@ $permission = json_decode($role_permission, true) ?? [];
               <span class="text">Transfer</span>
             </a>
           </li>
+          @endif
+          @endisset
+
+          @isset($permission)
+          @if(in_array('Quotations', $permission))
           <li class="nav-item">
             <a href="{{ URL::to('/quotations') }}">
               <span class="icon">
@@ -314,10 +325,14 @@ $permission = json_decode($role_permission, true) ?? [];
               <span class="text">Quotations</span>
             </a>
           </li>
+          @endif
+          @endisset
+
+
           <span class="divider"><hr /></span>
 
          
-          <li class="nav-item nav-item-has-children">
+        <li class="nav-item nav-item-has-children">
             <a
               href="#0"
               class="collapsed"
@@ -344,7 +359,7 @@ $permission = json_decode($role_permission, true) ?? [];
               </li>
              
             </ul>
-          </li>
+        </li>
         </ul>
       </nav>
      

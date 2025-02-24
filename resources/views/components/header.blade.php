@@ -193,8 +193,8 @@
                           <img src="{{ asset('assets/images/profile/profile-image.png') }}" alt="" />
                         </div>
                         <div>
-                          <h6 class="fw-500">Adam Joe</h6>
-                          <p>Admin</p>
+                          <h6 class="fw-500">{{ Session::get('admin_name') }}</h6>
+                          <p>{{ Session::get('adminuser') }}</p>
                         </div>
                       </div>
                     </div>
