@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" />
+    <link rel="stylesheet" href="https://posly.getstocky.com/assets/styles/vendor/datatables.min.css">
 
 
 
@@ -189,8 +190,12 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="profile-info">
                       <div class="info">
+                          @php
+                          $image1 = Session::get('role_photo'); 
+
+                          @endphp
                         <div class="image">
-                          <img src="{{ asset('assets/images/profile/profile-image.png') }}" alt="" />
+                          <img src="{{ asset('uploads/'.$image1) }}" alt="" />
                         </div>
                         <div>
                           <h6 class="fw-500">{{ Session::get('admin_name') }}</h6>
@@ -202,8 +207,17 @@
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                     <li>
                       <div class="author-info flex items-center !p-1">
+                  
+                          @php
+                          $image = Session::get('role_photo'); 
+
+                          @endphp
+                        
+                    
                         <div class="image">
-                          <img src="{{ asset('assets/images/profile/profile-image.png') }}" alt="image">
+                         
+                      
+                          <img src="{{ asset('uploads/'.$image) }}" alt="image">
                         </div>
                         <div class="content">
                         

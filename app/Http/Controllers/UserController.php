@@ -43,6 +43,7 @@ class UserController extends Controller
             $request->session()->put('admin_name', $admin->name);
             $request->session()->put('role_id', $admin->role_id);
             $request->session()->put('role_permission', $admin->role_id);
+            $request->session()->put('role_photo', $admin->profile_image);
             $admin_id =Session::get('role_id');
 
             $role = DB::table('roles')
