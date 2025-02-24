@@ -1,16 +1,20 @@
 
 @php
 
-$role_permission = Session::get('role_permission');
+$role_permission = Session::get('role_permission', '[]');
 
 
 
-$permission = json_decode($role_permission, true);
+
+$permission = json_decode($role_permission, true) ?? [];
+
 
 
 
 
 @endphp
+
+
 <aside class="sidebar-nav-wrapper">
       <div class="navbar-logo">
         <a href="index.html">
@@ -20,7 +24,7 @@ $permission = json_decode($role_permission, true);
       <nav class="sidebar-nav">
         <ul>
       
-      
+        @isset($permission)
         @if(in_array('Dashboard', $permission))
           <li class="nav-item nav-item-has-children">
             <a
@@ -41,16 +45,32 @@ $permission = json_decode($role_permission, true);
               </span>
               <span class="text">Dashboard</span>
             </a>
+            @endif
+            @endisset
+
+           
             <ul id="ddmenu_1" class="collapse show dropdown-nav">
+            @isset($permission)
+            @if(in_array('Users', $permission))
               <li>
                 <a href="{{ URL::to('/user') }}" class="active"> Users </a>
               </li>
+              @endif
+              @endisset
+
+              @isset($permission)
+              @if(in_array('Roles', $permission))
               <li>
+              
                 <a href="{{ URL::to('/role') }}" class="active"> Role </a>
               </li>
+              @endif
+              @endisset
             </ul>
           </li>
-          @endif
+         
+
+          @isset($permission)
           @if(in_array('People', $permission))
           <li class="nav-item nav-item-has-children">
             <a
@@ -82,6 +102,9 @@ $permission = json_decode($role_permission, true);
             </ul>
           </li>
           @endif
+          @endisset
+
+          @isset($permission)
           @if(in_array('Products', $permission))
           <li class="nav-item nav-item-has-children">
             <a
@@ -120,7 +143,10 @@ $permission = json_decode($role_permission, true);
             </ul>
           </li>
           @endif
+          @endisset
 
+
+          @isset($permission)
           @if(in_array('Adjustment', $permission))
           <li class="nav-item nav-item-has-children">
             <a
@@ -148,8 +174,10 @@ $permission = json_decode($role_permission, true);
             </ul>
           </li>
           @endif
+          @endisset
           <span class="divider"><hr /></span>
 
+          @isset($permission)
           @if(in_array('Purchases', $permission))
           <li class="nav-item nav-item-has-children">
             <a
@@ -183,6 +211,9 @@ $permission = json_decode($role_permission, true);
             </ul>
           </li>
           @endif
+          @endisset
+
+          @isset($permission)
           @if(in_array('Sales', $permission))
           <li class="nav-item nav-item-has-children">
             <a
@@ -218,6 +249,7 @@ $permission = json_decode($role_permission, true);
             </ul>
           </li>
           @endif
+          @endisset
   
           <li class="nav-item nav-item-has-children">
             <a

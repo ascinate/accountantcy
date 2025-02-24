@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Role extends Model
 {
+
+    use HasFactory;
     protected $table = 'roles';
 
     public $timestamps = false;
@@ -17,8 +20,8 @@ class Role extends Model
         'permissions',
     ];
 
-    protected $casts = [
-        'permissions' => 'array', // Convert JSON permissions to an array
-    ];
+    // protected $casts = [
+    //     'permissions' => 'array', // Convert JSON permissions to an array
+    // ];
 }
 

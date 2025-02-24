@@ -22,10 +22,10 @@ class RoleController extends Controller
 
         // Create the role and store it in the roles table
         $role = Role::create([
-            'name' => $request->input('role_name'),
-            'description' => $request->input('role_description'),
-            'permissions' => json_encode($permissions), // Storing permissions as a JSON string
-        ]);
+        'name' => $request->input('role_name'),
+        'description' => $request->input('role_description'),
+        'permissions' => $permissions, // Store permissions as an array (not JSON string)
+    ]);
 
         // Redirect back with a success message
         return redirect('/role')->with('success', 'Role created successfully!');

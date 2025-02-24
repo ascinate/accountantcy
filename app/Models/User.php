@@ -21,13 +21,13 @@ class User extends Model
         'warehouse',
     ];
 
-    public function role()
-    {
-        return $this->belongsTo(Role::class);
-    }
+    // public function role()
+    // {
+    //     return $this->belongsTo(Role::class);
+    // }
 
-    public function hasPermission($permission)
-    {
-        return in_array($permission, $this->role->permissions ?? []);
-    }
+    // public function hasPermission($permission)
+    // {
+    //     return in_array($permission, $this->role->permissions ?? []);
+    // }
 }
