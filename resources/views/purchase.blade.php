@@ -266,8 +266,17 @@
                                     </td>
                                 </tr>
                             `);
+                            document.getElementById("grand_total").innerText = product.price;
+                            
+                            
                         });
-                    } else {
+
+                        
+                       
+                    }
+                    
+                    
+                    else {
                         tableBody.append(`
                             <tr>
                                 <td colspan="6" class="text-center">No data available</td>
@@ -301,6 +310,7 @@
   function updateSubtotal(index, price) {
     let quantity = document.getElementById("quantity-" + index).value;
     let subtotal = document.getElementById("subtotal-" + index);
+    
     subtotal.innerText = (parseFloat(price) * parseInt(quantity)).toFixed(2);
     updateGrandTotal();
   }
@@ -311,7 +321,7 @@
     subtotals.forEach(sub => {
       grandTotal += parseFloat(sub.innerText) || 0;
     });
-    document.getElementById("grand-total").innerText = grandTotal.toFixed(2);
+    document.getElementById("grand_total").innerText = grandTotal.toFixed(2);
   }
 
   window.onload = updateGrandTotal; 
@@ -410,7 +420,8 @@
                           <td>
                             <span class="font-weight-bold">Grand Total:</span>
                           </td>
-                          <td><span id="grand-total">0.00</span></td>
+                        
+                          <td><span id="grand_total"></span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -421,7 +432,7 @@
                     
                     
                       <div class="col-lg-6 standard-only">
-                        <input type="number" class="form-control" name="tax" placeholder="Order Tax" required />
+                        <input type="number" class="form-control" name="tax" placeholder="Order Tax(%)" required />
                       </div>
 
                   
